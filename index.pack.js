@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 9);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -264,9 +264,9 @@ process.umask = function() { return 0; };
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(12);
+  module.exports = __webpack_require__(13);
 } else {
-  module.exports = __webpack_require__(11);
+  module.exports = __webpack_require__(12);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -376,9 +376,9 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(16);
+  module.exports = __webpack_require__(17);
 } else {
-  module.exports = __webpack_require__(15);
+  module.exports = __webpack_require__(16);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -402,7 +402,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Passwords = __webpack_require__(7);
+var _Passwords = __webpack_require__(8);
 
 var _Passwords2 = _interopRequireDefault(_Passwords);
 
@@ -416,22 +416,15 @@ function App() {
     var chars = _characters2.default;
     var lenOfChars = chars.length;
 
-    var _React$useState = _react2.default.useState([]),
+    var _React$useState = _react2.default.useState(""),
         _React$useState2 = _slicedToArray(_React$useState, 2),
-        savedPasswords = _React$useState2[0],
-        setSavedPasswords = _React$useState2[1];
-    // const [password, setPassword] = React.useState("")
-
+        password1 = _React$useState2[0],
+        setPassword1 = _React$useState2[1];
 
     var _React$useState3 = _react2.default.useState(""),
         _React$useState4 = _slicedToArray(_React$useState3, 2),
-        password1 = _React$useState4[0],
-        setPassword1 = _React$useState4[1];
-
-    var _React$useState5 = _react2.default.useState(""),
-        _React$useState6 = _slicedToArray(_React$useState5, 2),
-        password2 = _React$useState6[0],
-        setPassword2 = _React$useState6[1];
+        password2 = _React$useState4[0],
+        setPassword2 = _React$useState4[1];
 
     function startGeneratingPasswords() {
         generationOfFirstPassword();
@@ -465,33 +458,6 @@ function App() {
             _loop2(i);
         }
     }
-
-    // function generatePasswords(){
-    //     setPassword("")
-    //     setSavedPasswords([])
-    //     for (let i = 0; i < 15; i++){
-    //         let randNum = Math.floor(Math.random()*lenOfChars)
-    //         setPassword(prevPassword => prevPassword+chars[randNum])
-    //         if (i === 14){
-    //             setSavedPasswords(prevSavedPasswords => 
-    //                 [...prevSavedPasswords, password]
-    //             )
-    //             // setPassword("")
-    //         }
-    //     }
-    //     console.log(password)
-    //     for (let i = 0; i < 15; i++){
-    //         if (i === 14){
-    //             setSavedPasswords(prevSavedPasswords => 
-    //                 [...prevSavedPasswords, password]
-    //             )
-    //             // setPassword("")
-    //         }
-    //     }
-    //     console.log(password)
-    //     // setSavedPasswords(prevSavedPasswords => prevSavedPasswords+password)
-    // }
-
 
     return _react2.default.createElement(
         "div",
@@ -576,9 +542,9 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(10);
+  module.exports = __webpack_require__(11);
 } else {
-  module.exports = __webpack_require__(9);
+  module.exports = __webpack_require__(10);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -605,7 +571,7 @@ exports.default = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.default = GeneratorButton;
+exports.default = Modal;
 
 var _react = __webpack_require__(1);
 
@@ -613,27 +579,92 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function GeneratorButton(props) {
+function Modal(props) {
     return _react2.default.createElement(
         "div",
-        null,
-        _react2.default.createElement("input", {
-            className: "first-password",
-            type: "text",
-            value: props.toFirstPassword,
-            disabled: true
-        }),
-        _react2.default.createElement("input", {
-            className: "second-password",
-            type: "text",
-            value: props.toSecondPassword,
-            disabled: true
-        })
+        { className: "modal", style: props.styles },
+        _react2.default.createElement(
+            "h4",
+            null,
+            "Password copied!"
+        )
     );
 }
 
 /***/ }),
 /* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+exports.default = GeneratorButton;
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Modal = __webpack_require__(7);
+
+var _Modal2 = _interopRequireDefault(_Modal);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function GeneratorButton(props) {
+    var _React$useState = _react2.default.useState(false),
+        _React$useState2 = _slicedToArray(_React$useState, 2),
+        isCopied = _React$useState2[0],
+        setIsCopied = _React$useState2[1];
+
+    function copyText(event) {
+        var value = event.target.value;
+
+        if (value === "") {
+            return;
+        }
+        var textToCopy = value;
+        navigator.clipboard.writeText(textToCopy);
+        setIsCopied(true);
+        setTimeout(function () {
+            setIsCopied(false);
+        }, 2000);
+    }
+
+    return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement("input", {
+            className: "first-password",
+            name: "firstPassword",
+            type: "text",
+            value: props.toFirstPassword,
+            onClick: copyText,
+            readonly: true
+        }),
+        _react2.default.createElement("input", {
+            className: "second-password",
+            name: "secondPassword",
+            type: "text",
+            value: props.toSecondPassword,
+            onClick: copyText,
+            readonly: true
+        }),
+        _react2.default.createElement(_Modal2.default, { styles: {
+                opacity: isCopied ? 1 : 0,
+                top: "90px",
+                left: window.innerWidth * 0.5 - 75 + "px"
+            } })
+    );
+}
+
+/***/ }),
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -656,7 +687,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById("root"));
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -678,7 +709,7 @@ if (process.env.NODE_ENV !== "production") {
 var React = __webpack_require__(1);
 var _assign = __webpack_require__(2);
 var Scheduler = __webpack_require__(3);
-var tracing = __webpack_require__(17);
+var tracing = __webpack_require__(18);
 
 var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
 
@@ -26926,7 +26957,7 @@ exports.version = ReactVersion;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27230,7 +27261,7 @@ exports.unstable_renderSubtreeIntoContainer=function(a,b,c,d){if(!rk(c))throw Er
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29571,7 +29602,7 @@ exports.version = ReactVersion;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29601,7 +29632,7 @@ exports.useLayoutEffect=function(a,b){return S().useLayoutEffect(a,b)};exports.u
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29956,7 +29987,7 @@ exports.unstable_wrap = unstable_wrap;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29972,7 +30003,7 @@ var b=0;exports.__interactionsRef=null;exports.__subscriberRef=null;exports.unst
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30626,7 +30657,7 @@ exports.unstable_wrapCallback = unstable_wrapCallback;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30653,16 +30684,16 @@ exports.unstable_wrapCallback=function(a){var b=P;return function(){var c=P;P=b;
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(14);
+  module.exports = __webpack_require__(15);
 } else {
-  module.exports = __webpack_require__(13);
+  module.exports = __webpack_require__(14);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))

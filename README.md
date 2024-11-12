@@ -23,8 +23,10 @@ Welcome to the **Password Generator project**! It is a web application that allo
 2. Go to the  project  folder: 
 `cd Password-Generator`  
 3. Install  dependencies: 
-`npm install`  
-4. Start the project:
+`npm install` 
+4. Build the project:
+`npm run build`
+5. Start the project:
 `npm start`
 
 ## Using  
@@ -57,10 +59,9 @@ password-generator/
 │ ├── App.js
 │ ├── index.css
 │ ├── index.html
-│ ├── index.js
-│ └── index.pack.js
+│ └── index.js
 ├── .babelrc
-├── LICENSE
+├── LICENSE.txt
 ├── package.json
 ├── package-lock.json
 ├── README.md

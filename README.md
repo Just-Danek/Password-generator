@@ -38,7 +38,7 @@ If you want to contribute to the project, please create a fork of the repository
 
 ## License  
 
-This project is licensed under the terms of the MIT License. See the [LICENSE](https://github.com/Just-Danek/Password-generator/blob/main/LICENSE) file for more information.
+This project is licensed under the terms of the MIT License. See the [LICENSE](https://github.com/Just-Danek/Password-generator/blob/main/LICENSE.txt) file for more information.
 <br>
 <br>
 ```

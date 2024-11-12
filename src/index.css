@@ -6,6 +6,7 @@ body {
 h1{
     font-family: Karla;
     font-size: 40px;
+    transition: color 0.5s;
 }
 hr{
     width: 446px;
@@ -19,11 +20,11 @@ hr{
     width: 550px;
     height: 550px;
     margin: 64px auto 0px auto;
-    background-color: #1F2937;
     display: flex;
     flex-direction: column;
     justify-content: center;
     font-family: Inter;
+    transition: background-color 0.5s;
 }
 .generator-main{
     margin-left: 52px;
@@ -35,6 +36,37 @@ hr{
 .tagline{
     font-size: 20px;
     font-weight: 400;
+}
+.password-options{
+    display: flex;
+    align-items: center;
+}
+.slider{
+    margin-top: 70px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.slider input[type="range"]{
+    width: 150px;
+    height: 5px;
+    outline: none;
+    appearance: none;
+    border-radius: 5px;
+    background: #D9D9D9;
+    cursor: pointer;
+    transition: background 0.5s;
+}
+.slider input::-webkit-slider-thumb{
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #047857;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.slider p{
+    margin-top: 5px;
 }
 .generate-button{
     width: 191px;
@@ -86,4 +118,48 @@ input[type="text"]{
     align-items: center;
     justify-content: center;
     border-radius: 5px;
+}
+
+.switcher{
+    width: 50px;
+    height: 25px;
+    border-radius: 22px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.5s;
+    cursor: pointer;
+}
+.switcher-circle{
+    width: 18px;
+    height: 18px;
+    position: relative;
+    left: 7px;
+    border-radius: 20px;
+    transition: left 0.5s, background-color 0.5s;
+}
+.theme-switcher{
+    top: 0px;
+    left: 52px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.theme-icon{
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+.panel-switchers{
+    display: flex;
+    align-items: center;
+}
+.num-switcher{
+    margin-right: 72px;
+}
+.num-switcher, .symb-switcher{
+    width: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }

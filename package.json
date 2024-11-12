@@ -1,19 +1,44 @@
 {
-  "name": "Scrim-s0ph8nfc3d",
-  "description": "https://v2.scrimba.com/s0ph8nfc3d",
+  "name": "pass-generator",
+  "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
     "watch": "webpack -w",
-    "build": "webpack"
+    "start": "webpack serve --open"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "dependencies": {
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "webpack": "^2.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "babel-core": "^6.0",
-    "babel-loader": "^7.0",
-    "babel-preset-env": "*",
-    "babel-preset-react": "*"
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
+    "babel-loader": "^9.2.1",
+    "css-loader": "^7.1.2",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.6.3",
+    "nodemon": "^3.1.7",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
+  },
+  "devServer": {
+    "static": {
+      "directory": "__dirname"
+    },
+    "compress": true,
+    "port": 9000,
+    "open": true,
+    "stats": {
+      "children": true
+    }
   }
 }

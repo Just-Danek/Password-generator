@@ -1,32 +1,46 @@
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
-  "output": {
-    "filename": "[name].pack.js"
-  },
-  "resolve": {
-    "extensions": [
-      ".js",
-      ".json"
+    entry: './src/index.js',
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js',
+        clean: true,
+    },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                },
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader'],
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg)$/,
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[path][name].[ext]', 
+                        outputPath: './dist', 
+                    },
+                }
+            }
+        ],
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './src/index.html',
+        }),
     ],
-    "alias": {}
-  },
-  "module": {
-    "rules": [
-      {
-        "use": {
-          "loader": "babel-loader",
-          "options": {
-            "presets": [
-              "babel-preset-env",
-              "babel-preset-react"
-            ]
-          }
-        },
-        "exclude": /node_modules/,
-        "test": /\.js$/
-      }
-    ]
-  },
-  "entry": {
-    "index": "./index"
-  }
-}
+    devtool: 'source-map',
+    devServer: {
+    static: './dist',
+    },
+    mode: 'development',
+};

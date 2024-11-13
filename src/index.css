@@ -111,9 +111,7 @@ input[type="text"]{
     width: 150px;
     height: 40px;
     position: absolute;
-    transition: top 1s, opacity 0.5s;
-    color: #A7F3D0;
-    background-color: #34d39975;
+    transition: top 1s, opacity 0.5s, background 0.5s, color 0.5s;
     display: flex;
     align-items: center;
     justify-content: center;

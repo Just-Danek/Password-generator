@@ -52,13 +52,10 @@ export default function GeneratorButton(props){
                     <p style={{color: props.isDarkOn ? "white" : "#6B7280"}}>Use symbols</p>
                 </div>
             </div>
-            <Modal styles={
-                {
-                    opacity: isCopied ? 1 : 0,
-                    top: "90px",
-                    left: `${window.innerWidth*0.5 - 75}px`
-                }
-            }/>     
+            <Modal 
+                isDarkOn={props.isDarkOn}
+                isCopied={isCopied}
+            />     
         </div>
     )
 }
